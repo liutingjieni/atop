@@ -1,4 +1,4 @@
-name: release
+name: temp
 on: [push] # 仓库提交时触发
 jobs:
   release-job: # 发布任务
