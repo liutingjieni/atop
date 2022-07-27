@@ -21,8 +21,8 @@ jobs:
         id: step_one
         run: |
           echo "action_state=yellow" >> $GITHUB_ENV
-          res = which atop
-          echo res
+          $res = ${which atop}
+          echo $res
       - name: Use the value
         id: step_two
         run: |
