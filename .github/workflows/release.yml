@@ -18,8 +18,8 @@ jobs:
           node-version: '14'
       - run: |
           echo '发布' # shell 脚本
-          result=`date`
-          echo $result
+          date
+          echo $?
           result=`which atop`
           echo $result
       - name: Set the value
