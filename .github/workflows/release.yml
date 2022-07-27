@@ -18,4 +18,5 @@ jobs:
           echo '发布'
           uname -a
           pwd 
-          ls 
+          ls -al 
+          ls ../ -l
