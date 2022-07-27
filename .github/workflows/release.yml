@@ -23,8 +23,10 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          ret=`which atop`
-          echo $ret
+          t=`date`
+          echo $t
+          result=`which atop`
+          echo $result
       - name: Use the value
         id: step_two
         run: |
