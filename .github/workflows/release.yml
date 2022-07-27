@@ -23,6 +23,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
+          echo '发布'
           t=`date`
           echo $t
           result=`which atop`
