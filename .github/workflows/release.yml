@@ -19,9 +19,7 @@ jobs:
       - run: |
           echo '发布' # shell 脚本
           date
-          echo $?
-          result=`which atop`
-          echo $result
+          which atop
       - name: Set the value
         id: step_one
         run: |
