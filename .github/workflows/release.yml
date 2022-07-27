@@ -16,11 +16,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: echo '发布' # shell 脚本
+      - run: |
+          echo '发布' # shell 脚本
+          result=date
+          echo $result
       - name: Set the value
         id: step_one
         run: |
-          echo "action_state=yellow" >> $GITHUB_ENV
           ret=`which atop`
           echo $ret
       - name: Use the value
@@ -35,5 +37,7 @@ jobs:
           echo '::set-output name=action_echo::disabled'
           echo '::echo::on'
           echo '::set-output name=action_echo::enabled'
+          result=`date`
+          echo $result
           echo '::echo::off'
           echo '::set-output name=action_echo::disabled'
