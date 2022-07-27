@@ -17,6 +17,5 @@ jobs:
         run: |
           echo '发布'
           uname -a
-          if [ ! whilch atop ];then
-            echo "git clone"
-          fi
+          pwd 
+          ls 
