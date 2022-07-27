@@ -16,4 +16,4 @@ jobs:
         id: step_one
         run: |
           echo '发布'
-          which atop
+          uname -a
