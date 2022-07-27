@@ -12,29 +12,8 @@ jobs:
   job2: # 发布任务
     runs-on: ubuntu-latest # 运行系统环境
     steps: # 步骤
-      - uses: actions/checkout@v2 # 使用公共的 action
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: |
-          echo '发布' # shell 脚本
-          date
-          which atop
       - name: Set the value
         id: step_one
         run: |
           echo '发布'
-      - name: Use the value
-        id: step_two
-        run: |
-          echo "${{ env.action_state }}" # This will output 'yellow'
-  job3:
-    runs-on: ubuntu-latest
-    steps:
-      - name: toggle workflow command echoing
-        run: |
-          echo '::set-output name=action_echo::disabled'
-          echo '::echo::on'
-          echo '::set-output name=action_echo::enabled'
-          echo '::echo::off'
-          echo '::set-output name=action_echo::disabled'
+          which atop
