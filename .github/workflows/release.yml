@@ -22,6 +22,7 @@ jobs:
         id: step_two
         run: |
           echo '测试'
-          if ! atop -V |grep -i Version; then echo "assert"; exit;fi
+          if ! atop -V |grep -i Version; then echo "::debug::atop -V error "; exit;fi
+          echo '测试'
           
           
