@@ -16,6 +16,7 @@ jobs:
           ls atop/ -l
           cd atop
           sudo make && sudo make install
+          atop -V |grep -i Version
           echo '安装完成'
   job2:
     runs-on: ubuntu-latest # 运行系统环境
