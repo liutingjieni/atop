@@ -19,6 +19,7 @@ jobs:
           echo '安装完成'
   job2:
     runs-on: ubuntu-latest # 运行系统环境
+    needs: job1
     steps: # 步骤
       - name: build
         id: step_one
