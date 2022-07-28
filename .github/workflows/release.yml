@@ -15,14 +15,39 @@ jobs:
           git clone https://github.com/liutingjieni/atop.git
           ls atop/ -l
           cd atop
-          if ! atop -V ; then echo "assert";fi
+          if atop -V ; then echo "assert: atop have installed ";fi
           #sudo make && sudo make install
           echo '安装完成'
       - name: subcmd_check
         id: step_two
         run: |
           echo '测试'
-          if ! atop -V |grep -i Version; then echo "::debug::atop -V error "; exit;fi
+          if ! atop -V |grep -i Version; then echo "assert: atop -V error "; exit;fi
+          if ! atop -h |grep -i Usage; then echo "assert: atop -h error "; exit;fi
+          echo '测试'
+      - name: shadowfile_check
+        id: step_three
+        run: |
+          echo '测试'
+          if ! ls -A /run/pacct_shadow.d/|wc -l; then echo "assert: shadowfile_check error "; exit;fi
+          echo '测试'
+      - name: logfile_check
+        id: step_four
+        run: |
+          echo '测试'
+          if ! find  /var/log/atop/ -name \"atop_*\"|wc -l; then echo "assert: logfile_check error(/var/log/atop/) "; exit;fi
+          echo '测试'
+      - name: atop_acctfile_check
+        id: step_five
+        run: |
+          echo '测试'
+          if ! ls /var/cache/atop.d/atop.acct|wc -l; then echo "assert: acctfile_check error(/var/cache/atop.d/atop.acct) "; exit;fi
+          echo '测试'
+      - name: arg_check
+        id: step_six
+        run: |
+          echo '测试'
+          if ! grep -i loginterval=10 /usr/share/atop/atop.daily; then echo "assert: arg_check error(loginterval=10 /usr/share/atop/atop.daily)"; exit;fi
           echo '测试'
           
           
