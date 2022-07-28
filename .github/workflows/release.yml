@@ -10,7 +10,7 @@ jobs:
           git clone https://github.com/liutingjieni/atop.git
           cd atop
           if atop -V ; then echo "assert: atop have installed "; exit;fi
-          sudo make && sudo make install
+          #sudo make && sudo make install
           echo '安装完成'
 #       - name: subcmd_check
 #         id: step_two
