@@ -15,6 +15,7 @@ jobs:
           git clone https://github.com/liutingjieni/atop.git
           ls atop/ -l
           cd atop
+          if ！ atop -V ; then echo "assert";fi
           sudo make && sudo make install
           atop -V |grep -i Version
           echo '安装完成'
