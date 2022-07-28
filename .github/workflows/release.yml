@@ -23,5 +23,5 @@ jobs:
           git clone https://github.com/liutingjieni/atop.git
           ls atop/ -l
           cd atop
-          make && make install
+          sudo make && sudo make install
           
