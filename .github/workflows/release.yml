@@ -19,12 +19,12 @@ jobs:
 #           if ! atop -V |grep -i Version; then echo "assert: atop -V error ";  atop -V; exit;fi
 #           if ! atop -h |grep -i Usage; then echo "assert: atop -h error "; atop -h; exit;fi
 #           echo '测试'
-      - name: shadowfile_check
-        id: step_three
-        run: |
-          echo '测试'
-          if ls -A /run/pacct_shadow.d/|wc -l; then echo "assert: shadowfile_check error ";ls -A /run/pacct_shadow.d/; exit 1;fi
-          echo '测试'
+#       - name: shadowfile_check
+#         id: step_three
+#         run: |
+#           echo '测试'
+#           if ls -A /run/pacct_shadow.d/|wc -l; then echo "assert: shadowfile_check error ";ls -A /run/pacct_shadow.d/; exit;fi
+#           echo '测试'
       - name: logfile_check
         id: step_four
         run: |
