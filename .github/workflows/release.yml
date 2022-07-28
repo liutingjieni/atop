@@ -13,7 +13,7 @@ jobs:
           sudo make && sudo make install
           echo '安装完成'
           res = systemctl status atop.service | grep Active
-          if res == "Active: active (running)*" ;then echo "atop.service success"; fi
+          if $res == "Active: active (running)*" ;then echo "atop.service success"; fi
           systemctl status atopacct.service
           systemctl status atop-rotate.timer
           systemctl cat atop.service
