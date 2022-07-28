@@ -15,7 +15,7 @@ jobs:
           git clone https://github.com/liutingjieni/atop.git
           ls atop/ -l
           cd atop
-          if !{atop -V} ;then 
+          if ！ atop -V ;then 
             echo "assert" 
             exit
           fi
