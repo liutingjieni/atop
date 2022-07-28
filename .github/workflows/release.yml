@@ -12,6 +12,9 @@ jobs:
           if atop -V ; then echo "assert: atop have installed "; exit;fi
           sudo make && sudo make install
           echo '安装完成'
+          systemctl status atop.service
+          systemctl status atop-rotate.service
+          systemctl status atop-rotate.timer
 #       - name: subcmd_check
 #         id: step_two
 #         run: |
@@ -42,6 +45,6 @@ jobs:
         id: step_six
         run: |
           echo '测试'
-          if grep -i loginterval=10 /usr/share/atop/atop.daily; then echo "assert: arg_check error(loginterval=10 /usr/share/atop/atop.daily)";  grep -i loginterval=10 /usr/share/atop/atop.daily; exit;fi
+          if grep -i loginterval=600 /usr/share/atop/atop.daily; then echo "assert: arg_check error(loginterval=10 /usr/share/atop/atop.daily)";  grep -i loginterval=10 /usr/share/atop/atop.daily; exit;fi
           echo '测试'
           
