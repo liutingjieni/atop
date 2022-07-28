@@ -29,18 +29,18 @@ jobs:
         id: step_four
         run: |
           echo '测试'
-          if find  /var/log/atop/ -name \"atop_*\"|wc -l; then echo "assert: logfile_check error(/var/log/atop/) "; exit;fi
+          if find  /var/log/atop/ -name \"atop_*\"|wc -l; then echo "assert: logfile_check error(/var/log/atop/) ";find  /var/log/atop/ -name \"atop_*\"； exit;fi
           echo '测试'
       - name: atop_acctfile_check
         id: step_five
         run: |
           echo '测试'
-          if ls /var/cache/atop.d/atop.acct|wc -l; then echo "assert: acctfile_check error(/var/cache/atop.d/atop.acct) "; exit;fi
+          if ls /var/cache/atop.d/atop.acct|wc -l; then echo "assert: acctfile_check error(/var/cache/atop.d/atop.acct) ";ls /var/cache/atop.d/atop.acct; exit;fi
           echo '测试'
       - name: arg_check
         id: step_six
         run: |
           echo '测试'
-          if grep -i loginterval=10 /usr/share/atop/atop.daily; then echo "assert: arg_check error(loginterval=10 /usr/share/atop/atop.daily)"; exit;fi
+          if grep -i loginterval=10 /usr/share/atop/atop.daily; then echo "assert: arg_check error(loginterval=10 /usr/share/atop/atop.daily)";  grep -i loginterval=10 /usr/share/atop/atop.daily; exit;fi
           echo '测试'
           
