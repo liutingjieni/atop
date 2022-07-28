@@ -15,11 +15,11 @@ jobs:
           git clone https://github.com/liutingjieni/atop.git
           ls atop/ -l
           cd atop
-          if !atop -V ;then 
+          if !{atop -V} ;then 
             echo "assert" 
             exit
           fi
-          sudo make && sudo make install
+          #sudo make && sudo make install
           echo '安装完成'
   job2:
     runs-on: ubuntu-latest # 运行系统环境
