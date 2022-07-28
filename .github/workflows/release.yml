@@ -15,6 +15,9 @@ jobs:
           systemctl status atop.service
           systemctl status atopacct.service
           systemctl status atop-rotate.timer
+          systemctl cat atop.service
+          systemctl cat atopacct.service
+          systemctl cat atop-rotate.timer
 #       - name: subcmd_check
 #         id: step_two
 #         run: |
