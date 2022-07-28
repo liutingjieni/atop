@@ -4,18 +4,10 @@ jobs:
   job1: # 发布任务
     runs-on: ubuntu-latest # 运行系统环境
     steps: # 步骤
-      - uses: actions/checkout@v2 # 使用公共的 action
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: echo '发布' # shell 脚本
-  job2: # 发布任务
-    runs-on: ubuntu-latest # 运行系统环境
-    steps: # 步骤
       - name: build
         id: step_one
         run: |
-          echo '发布'
+          echo '构建安装'
           uname -a
           pwd 
           ls -al 
@@ -23,6 +15,18 @@ jobs:
           git clone https://github.com/liutingjieni/atop.git
           ls atop/ -l
           cd atop
+          if !atop -V ;then 
+            echo "assert" 
+            exit
+          fi
           sudo make && sudo make install
+          echo '安装完成'
+  job2:
+    runs-on: ubuntu-latest # 运行系统环境
+    steps: # 步骤
+      - name: build
+        id: step_one
+        run: |
+          echo '测试'
           atop -V
           
