@@ -12,13 +12,13 @@ jobs:
           if atop -V ; then echo "assert: atop have installed "; exit;fi
           #sudo make && sudo make install
           echo '安装完成'
-#       - name: subcmd_check
-#         id: step_two
-#         run: |
-#           echo '测试'
-#           if ! atop -V |grep -i Version; then echo "assert: atop -V error ";  atop -V; exit;fi
-#           if ! atop -h |grep -i Usage; then echo "assert: atop -h error "; atop -h; exit;fi
-#           echo '测试'
+      - name: subcmd_check
+        id: step_two
+        run: |
+          echo '测试'
+          if ! atop -V |grep -i Version; then echo "assert: atop -V error ";  atop -V; exit;fi
+          if ! atop -h |grep -i Usage; then echo "assert: atop -h error "; atop -h; exit;fi
+          echo '测试'
       - name: shadowfile_check
         id: step_three
         run: |
