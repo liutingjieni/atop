@@ -24,4 +24,5 @@ jobs:
           ls atop/ -l
           cd atop
           sudo make && sudo make install
+          atop -V
           
