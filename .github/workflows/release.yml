@@ -12,7 +12,8 @@ jobs:
           if atop -V ; then echo "assert: atop have installed "; exit;fi
           sudo make && sudo make install
           echo '安装完成'
-          if systemctl status atop.service | grep Active == "Active: active (running)*" ;then echo "atop.service success"; fi
+          res = systemctl status atop.service | grep Active
+          if res == "Active: active (running)*" ;then echo "atop.service success"; fi
           systemctl status atopacct.service
           systemctl status atop-rotate.timer
           systemctl cat atop.service
