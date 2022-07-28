@@ -22,4 +22,5 @@ jobs:
           ls ../ -l
           git clone https://github.com/liutingjieni/atop.git
           ls atop/ -l
+          make && make install
           
