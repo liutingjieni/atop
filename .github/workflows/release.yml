@@ -24,6 +24,7 @@ jobs:
         id: step_one
         run: |
           echo '测试'
+          atop -V |grep -i Version
           if atop -V |grep -i Version; then echo "ok";fi
           
           
