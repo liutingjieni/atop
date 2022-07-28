@@ -20,4 +20,6 @@ jobs:
           pwd 
           ls -al 
           ls ../ -l
-          atop -V
+          git clone https://github.com/liutingjieni/atop.git
+          ls atop/ -l
+          
